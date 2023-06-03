@@ -1,0 +1,5 @@
+### test /hello endpoint
+GET http://localhost:3000/hello
+
+### test /echo/:id endpoint
+GET http://localhost:3000/echo/dog
