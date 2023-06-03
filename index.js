@@ -35,7 +35,7 @@ app.post("/sum", (req, res) => {
     initValue
   );
 
-  res.status(201).json({ sum: sum });
+  res.status(200).json({ sum: sum });
 });
 
 // BE & FE Comm.
@@ -46,7 +46,7 @@ app.post("/list", (req, res) => {
 
   list.push(text.toString());
   const newList = [...list];
-  res.status(201).json({ list: newList });
+  res.status(200).json({ list: newList });
 });
 
 app.listen(port, () => {
