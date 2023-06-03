@@ -1,4 +1,4 @@
-# aspect
+# lagom
 
 Second weekly exercise
 

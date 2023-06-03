@@ -3,3 +3,12 @@ GET http://localhost:3000/hello
 
 ### test /echo/:id endpoint
 GET http://localhost:3000/echo/dog
+
+
+### post request sum endpoint
+POST http://localhost:3000/sum
+Content-Type: application/json
+
+{
+   "numbers": [1, 2, 3]
+}
