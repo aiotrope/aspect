@@ -22,5 +22,5 @@ POST http://localhost:3000/list
 Content-Type: application/json
 
 {
-   "text": "foo"
+   "text": "bar"
 }

@@ -46,7 +46,9 @@ app.post("/list", (req, res) => {
 
   list.push(text.toString());
   const newList = [...list];
+  //console.log(newList)
   res.status(200).json({ list: newList });
+  
 });
 
 app.listen(port, () => {
