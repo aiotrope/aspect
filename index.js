@@ -1,8 +1,13 @@
 const express = require("express");
+const path = require("path");
 
 const app = express();
 
+const port = 3000;
+
 app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(express.static(path.join(__dirname, "public")));
 
 // hello world
 app.get("/hello", (req, res) => {
@@ -20,20 +25,29 @@ app.post("/sum", (req, res) => {
   let numbers = req.body.numbers;
 
   if (!Array.isArray(numbers) || numbers.some(isNaN)) {
-    return res
-      .status(400)
-      .json({
-        error: "only array data input and numeric elements are allowed!",
-      });
+    return res.status(400).json({
+      error: "only array data input and numeric element are allowed!",
+    });
   }
-  let sum = numbers.reduce((x, y) => {
-    return x + y;
-  });
+  const initValue = 0;
+  let sum = numbers.reduce(
+    (accumulator, currentValue) => accumulator + currentValue,
+    initValue
+  );
 
   res.status(201).json({ sum: sum });
 });
 
-const port = 3000;
+// BE & FE Comm.
+const list = [];
+
+app.post("/list", (req, res) => {
+  let text = req.body.text;
+
+  list.push(text.toString());
+  const newList = [...list];
+  res.status(201).json({ list: newList });
+});
 
 app.listen(port, () => {
   console.log(`Server running on port: ${port}`);

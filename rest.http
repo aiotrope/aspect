@@ -12,3 +12,15 @@ Content-Type: application/json
 {
    "numbers": [1, 2, 3]
 }
+
+### servic static folder
+GET http://localhost:3000
+
+
+### post request sum endpoint
+POST http://localhost:3000/list
+Content-Type: application/json
+
+{
+   "text": "bar"
+}
