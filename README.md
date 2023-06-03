@@ -5,7 +5,7 @@ Second weekly exercise
 ## CLI Commands
 
 ```bash
-# start node project with npm
+# init node project with npm
 $ npm init
 
 # run the code 
